@@ -1,0 +1,52 @@
+/* Navbar container */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  
+  /* List container */
+  .list {
+    display: flex;
+    justify-content: flex-end; /* Aligns the items to the right */
+    padding-right: 50px; /* Moves the links a bit more to the left */
+  }
+  
+  /* List style */
+  .list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  /* List items */
+  .list ul li {
+    margin-left: 20px;
+    display: inline-block;
+  }
+  
+  /* Links style */
+  .list ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  /* Hover effect on links */
+  .list ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+  }
+  
+  /* Additional responsive styling (optional) */
+  @media (max-width: 600px) {
+    .list ul {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  
