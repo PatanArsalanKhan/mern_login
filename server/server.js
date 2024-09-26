@@ -81,7 +81,7 @@ app.post("/login", async (req, res) => {
             user: { id: user.id }
         };
 
-        jwt.sign(payload, JWT_SECRET, { expiresIn: "1h" }, (error, token) => {
+        jwt.sign(payload, JWT_SECRET, { expiresIn: "59s" }, (error, token) => {
             if (error) throw error;
             return res.json({ token });
         });
