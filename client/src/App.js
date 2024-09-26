@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Register from './Register';
@@ -9,6 +9,22 @@ export const store = createContext();
 
 const App = () => {
   const [token, setToken] = useState(null);  // Token stored in the context
+
+  // Load token from localStorage when the component mounts
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      setToken(storedToken);
+    }
+  }, []);
+
+  // Save token to localStorage when it changes
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem('token', token);
+    }
+  }, [token]);
+
   return (
     <div>
       <store.Provider value={[token, setToken]}>

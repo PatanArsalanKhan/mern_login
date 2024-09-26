@@ -24,7 +24,7 @@ const Login = () => {
 
             if (res.data.token) {
                 setToken(res.data.token);  // Save token to the context
-                console.log("Generated Token:", res.data.token);
+                localStorage.setItem('token', res.data.token);  // Store token in localStorage
                 navigate("/myprofile");  // Redirect to the profile page
                 // alert("Login successful!");
             } else {
